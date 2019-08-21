@@ -9,11 +9,13 @@ var teamsRouter = require("./routes/teams");
 var eventsRouter = require("./routes/events");
 
 var app = express();
+
 app.set("view engine", "html");
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 
+var router = express.Router();
 /* GET home page. */
 router.get("/", function(req, res, next) {
   res.send("🐛 Strider Task: BUG HUNTERS");
