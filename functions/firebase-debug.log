@@ -1,0 +1,467 @@
+[debug] [2019-08-21T15:03:49.909Z] ----------------------------------------------------------------------
+[debug] [2019-08-21T15:03:49.911Z] Command:       /usr/local/Cellar/node/11.13.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-08-21T15:03:49.911Z] CLI Version:   7.2.4
+[debug] [2019-08-21T15:03:49.911Z] Platform:      darwin
+[debug] [2019-08-21T15:03:49.911Z] Node Version:  v11.13.0
+[debug] [2019-08-21T15:03:49.912Z] Time:          Wed Aug 21 2019 12:03:49 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-08-21T15:03:49.912Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-21T15:03:49.919Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-21T15:03:49.919Z] > authorizing via signed-in user
+[debug] [2019-08-21T15:03:49.919Z] [iam] checking project strider-bug-hunters for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-08-21T15:03:49.921Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/strider-bug-hunters:testIamPermissions  
+
+[debug] [2019-08-21T15:03:50.569Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:03:50.571Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/strider-bug-hunters  
+ 
+[debug] [2019-08-21T15:03:52.007Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'strider-bug-hunters'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2019-08-21T15:03:53.993Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": " ",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "firebase": "6.4.0",
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.1.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-08-21T15:03:53.994Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2019-08-21T15:03:53.995Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2019-08-21T15:03:55.816Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:03:55.925Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2019-08-21T15:03:55.926Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/strider-bug-hunters/adminSdkConfig  
+ 
+[debug] [2019-08-21T15:03:57.462Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:03:57.464Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions  
+
+[debug] [2019-08-21T15:03:59.955Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-08-21T15:03:59.957Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/strider-bug-hunters/configs  
+ 
+[debug] [2019-08-21T15:04:00.897Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (23.75 KB) for uploading
+[debug] [2019-08-21T15:04:01.444Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-08-21T15:04:02.616Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:02.617Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-0fbbcb25-5d38-4af8-8a33-b50866624b4b/4ba10081-051e-4c1b-a87a-7144433e6cf2.zip?GoogleAccessId=service-114071764524@gcf-admin-robot.iam.gserviceaccount.com&Expires=1566401642&Signature=dzBxfmuJsIw%2BHD%2FJRox5LaAlPyefemGt84fsgH11C1GUtollfxxVmOZCN0shYA2zvcbdVWOLvcXQbgp%2BOp3%2B3awpk5l7ppPSS1a511cUC2ZfkvEZHu9pcG6buPi8CK2vkQuVtpYWDT5kjL%2BeGIuJY8ga9Yo0oLJJHyGsC0cz8v8B9E0ufKklt3GMbqBNgkbwpzTm2hMpVn8nRAGCu%2Bzii7ncEQ5PIVS5xJfakwXWwcYamvu0E%2FevMqj%2Blbl6527Ij1mNy7XGPwZPCI3jDsuVzSX%2Fcj0T15FOXcekLjujvfOpzwqrKid56esUH9vzdtXXbMpcL2RXWexcgLqFvv8s1g%3D%3D  
+ <request body omitted>
+[debug] [2019-08-21T15:04:03.730Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting[strider-bug-hunters]: beginning deploy...
+[info] i  hosting[strider-bug-hunters]: found 2 files in build
+[debug] [2019-08-21T15:04:03.736Z] [hosting] hash cache [YnVpbGQ] load error: lines is not defined
+[debug] [2019-08-21T15:04:04.173Z] [hosting] hash cache [YnVpbGQ] stored for 2 files
+[debug] [2019-08-21T15:04:04.174Z] [hosting][hash queue][FINAL]
+[debug] [2019-08-21T15:04:04.174Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114:populateFiles  
+ <request body omitted>
+[debug] [2019-08-21T15:04:04.838Z] <<< HTTP RESPONSE 500
+[debug] [2019-08-21T15:04:04.839Z] <<< HTTP RESPONSE BODY
+[debug] [2019-08-21T15:04:05.244Z] [populateQueue] Retrying task index 0
+[debug] [2019-08-21T15:04:05.245Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114:populateFiles  
+ <request body omitted>
+[debug] [2019-08-21T15:04:06.032Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:06.032Z] [hosting][populate queue][FINAL]
+[debug] [2019-08-21T15:04:06.033Z] [hosting] uploads queued: 0
+[debug] [2019-08-21T15:04:06.033Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[strider-bug-hunters]: file upload complete
+[debug] [2019-08-21T15:04:06.033Z] [hosting] deploy completed after 2302ms
+[debug] [2019-08-21T15:04:06.543Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/-/functions  
+ 
+[debug] [2019-08-21T15:04:07.430Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function app(us-central1)...
+[debug] [2019-08-21T15:04:07.433Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2019-08-21T15:04:07.434Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2019-08-21T15:04:08.020Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:08.022Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/us-central1/functions/app {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2019-08-21T15:04:08.861Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:08.863Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/-/functions  
+ 
+[debug] [2019-08-21T15:04:09.785Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:09.786Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:10.602Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:12.604Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:13.277Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:15.282Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:16.015Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:18.019Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:18.692Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:20.695Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:21.350Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:23.352Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:24.119Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:26.120Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:26.792Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:28.795Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:29.260Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:31.261Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:32.005Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:34.009Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:35.681Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:37.685Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:38.377Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:40.381Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:41.055Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:43.057Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:43.781Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:45.785Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:46.549Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:48.552Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:49.308Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:51.314Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:52.075Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:04:54.075Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvWFJsQ21YdC1Malk  
+ 
+[debug] [2019-08-21T15:04:54.559Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[app(us-central1)]: Successful update operation. 
+[debug] [2019-08-21T15:04:54.563Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "strider-bug-hunters"
+    },
+    "site": "strider-bug-hunters",
+    "version": "sites/strider-bug-hunters/versions/2ae8556353029114"
+  }
+]
+[info] i  hosting[strider-bug-hunters]: finalizing version...
+[debug] [2019-08-21T15:04:54.563Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114?updateMask=status  
+
+[debug] [2019-08-21T15:04:55.235Z] <<< HTTP RESPONSE 500
+[debug] [2019-08-21T15:04:55.235Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-08-21T15:04:55.611Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 21 Aug 2019 15:04:55 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": "?updateMask=status",
+        "query": "updateMask=status",
+        "pathname": "/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114",
+        "path": "/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114?updateMask=status",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/2ae8556353029114?updateMask=status"
+      },
+      "method": "PATCH"
+    }
+  }
+}
+[debug] [2019-08-21T15:07:26.991Z] ----------------------------------------------------------------------
+[debug] [2019-08-21T15:07:26.993Z] Command:       /usr/local/Cellar/node/11.13.0/bin/node /usr/local/bin/firebase deploy
+[debug] [2019-08-21T15:07:26.993Z] CLI Version:   7.2.4
+[debug] [2019-08-21T15:07:26.993Z] Platform:      darwin
+[debug] [2019-08-21T15:07:26.993Z] Node Version:  v11.13.0
+[debug] [2019-08-21T15:07:26.994Z] Time:          Wed Aug 21 2019 12:07:26 GMT-0300 (Brasilia Standard Time)
+[debug] [2019-08-21T15:07:26.994Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2019-08-21T15:07:27.001Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2019-08-21T15:07:27.001Z] > authorizing via signed-in user
+[debug] [2019-08-21T15:07:27.001Z] [iam] checking project strider-bug-hunters for permissions ["cloudfunctions.functions.create","cloudfunctions.functions.delete","cloudfunctions.functions.get","cloudfunctions.functions.list","cloudfunctions.functions.update","cloudfunctions.operations.get","firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2019-08-21T15:07:27.003Z] >>> HTTP REQUEST POST https://cloudresourcemanager.googleapis.com/v1/projects/strider-bug-hunters:testIamPermissions  
+
+[debug] [2019-08-21T15:07:27.652Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:27.654Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/strider-bug-hunters  
+ 
+[debug] [2019-08-21T15:07:28.323Z] <<< HTTP RESPONSE 200
+[info] 
+[info] === Deploying to 'strider-bug-hunters'...
+[info] 
+[info] i  deploying functions, hosting
+[info] Running command: npm --prefix "$RESOURCE_DIR" run lint
+[info] ✔  functions: Finished running predeploy script.
+[debug] [2019-08-21T15:07:30.599Z] > [functions] package.json contents: {
+  "name": "functions",
+  "description": "Cloud Functions for Firebase",
+  "scripts": {
+    "lint": " ",
+    "serve": "firebase serve --only functions",
+    "shell": "firebase functions:shell",
+    "start": "npm run shell",
+    "deploy": "firebase deploy --only functions",
+    "logs": "firebase functions:log"
+  },
+  "engines": {
+    "node": "8"
+  },
+  "dependencies": {
+    "firebase-admin": "^8.0.0",
+    "firebase-functions": "^3.1.0",
+    "firebase": "6.4.0"
+  },
+  "devDependencies": {
+    "firebase-functions-test": "^0.1.6"
+  },
+  "private": true
+}
+[info] i  functions: ensuring necessary APIs are enabled...
+[debug] [2019-08-21T15:07:30.600Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/cloudfunctions.googleapis.com  
+ 
+[debug] [2019-08-21T15:07:30.600Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/runtimeconfig.googleapis.com  
+ 
+[debug] [2019-08-21T15:07:31.427Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:31.544Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: all necessary APIs are enabled
+[debug] [2019-08-21T15:07:31.545Z] >>> HTTP REQUEST GET https://firebase.googleapis.com/v1beta1/projects/strider-bug-hunters/adminSdkConfig  
+ 
+[debug] [2019-08-21T15:07:32.073Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:32.075Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions  
+
+[debug] [2019-08-21T15:07:33.054Z] <<< HTTP RESPONSE 200
+[info] i  functions: preparing functions directory for uploading...
+[debug] [2019-08-21T15:07:33.057Z] >>> HTTP REQUEST GET https://runtimeconfig.googleapis.com/v1beta1/projects/strider-bug-hunters/configs  
+ 
+[debug] [2019-08-21T15:07:33.622Z] <<< HTTP RESPONSE 200
+[info] i  functions: packaged functions (23.71 KB) for uploading
+[debug] [2019-08-21T15:07:34.103Z] >>> HTTP REQUEST POST https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/us-central1/functions:generateUploadUrl  
+ 
+[debug] [2019-08-21T15:07:35.151Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:35.152Z] >>> HTTP REQUEST PUT https://storage.googleapis.com/gcf-upload-us-central1-0fbbcb25-5d38-4af8-8a33-b50866624b4b/01026284-0ffe-4063-9350-6abfa6dfeed0.zip?GoogleAccessId=service-114071764524@gcf-admin-robot.iam.gserviceaccount.com&Expires=1566401855&Signature=WunqVqnVtOHyFRpm2UegPU6CxsghFqvhCJbkdgBAKZzzLTHH7Pb%2Fal4bPpUsP0GqrsP%2BxXpRRwoTtrJ0o%2Be0sIzmg0at34yjY7UrMSL5Mgrd4TMubKi76bYxczm3p%2Bg9JsOngBW%2BBGfXz%2FWRywxUBC%2Fcp52QDNd9csz8vnz%2BMzteUxyEyHxFpMmw0tGOy4zmF5e5Ou2j%2Bhf3yM3KZTsjTiu2ejOf9UIsO3oH3diwcShdrKMivvT%2BujGmCYKiJ2FYeapS1JfUc1O%2B%2FQeCvUI62NyRTcS%2FKNmBpwKNt0fCP1V8iC2cSOnMWrK6F3qJrUA2khqXd%2Fl5EzyTXXvMZBCAbA%3D%3D  
+ <request body omitted>
+[debug] [2019-08-21T15:07:36.158Z] <<< HTTP RESPONSE 200
+[info] ✔  functions: functions folder uploaded successfully
+[info] i  hosting[strider-bug-hunters]: beginning deploy...
+[info] i  hosting[strider-bug-hunters]: found 2 files in build
+[debug] [2019-08-21T15:07:36.164Z] [hosting] hash cache [YnVpbGQ] load error: lines is not defined
+[debug] [2019-08-21T15:07:36.607Z] [hosting] hash cache [YnVpbGQ] stored for 2 files
+[debug] [2019-08-21T15:07:36.608Z] [hosting][hash queue][FINAL]
+[debug] [2019-08-21T15:07:36.608Z] >>> HTTP REQUEST POST https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/3705977fde8b9fb1:populateFiles  
+ <request body omitted>
+[debug] [2019-08-21T15:07:37.339Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:37.339Z] [hosting][populate queue][FINAL]
+[debug] [2019-08-21T15:07:37.339Z] [hosting] uploads queued: 0
+[debug] [2019-08-21T15:07:37.339Z] [hosting][upload queue][FINAL]
+[info] ✔  hosting[strider-bug-hunters]: file upload complete
+[debug] [2019-08-21T15:07:37.340Z] [hosting] deploy completed after 1181ms
+[debug] [2019-08-21T15:07:38.132Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/-/functions  
+ 
+[debug] [2019-08-21T15:07:38.977Z] <<< HTTP RESPONSE 200
+[info] i  functions: updating Node.js 8 function app(us-central1)...
+[debug] [2019-08-21T15:07:38.980Z] Trigger is:  {"httpsTrigger":{}}
+[debug] [2019-08-21T15:07:38.981Z] >>> HTTP REQUEST GET https://serviceusage.googleapis.com/v1/projects/strider-bug-hunters/services/cloudscheduler.googleapis.com  
+ 
+[debug] [2019-08-21T15:07:39.525Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:39.527Z] >>> HTTP REQUEST PATCH https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/us-central1/functions/app {"updateMask":"sourceUploadUrl,name,labels,runtime,httpsTrigger"} 
+
+[debug] [2019-08-21T15:07:40.412Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:40.414Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/projects/strider-bug-hunters/locations/-/functions  
+ 
+[debug] [2019-08-21T15:07:41.247Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:41.248Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:41.832Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:43.837Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:44.548Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:46.552Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:47.145Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:49.148Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:49.832Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:51.836Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:52.595Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:54.601Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:55.366Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:07:57.369Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:07:58.125Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:00.130Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:00.808Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:02.812Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:03.557Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:05.557Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:06.216Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:08.217Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:08.659Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:10.662Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:11.438Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:13.442Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:15.327Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:17.330Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:17.980Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:19.984Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:20.667Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:22.668Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:23.418Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:25.477Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:26.244Z] <<< HTTP RESPONSE 200
+[debug] [2019-08-21T15:08:28.245Z] >>> HTTP REQUEST GET https://cloudfunctions.googleapis.com/v1/operations/c3RyaWRlci1idWctaHVudGVycy91cy1jZW50cmFsMS9hcHAvaTR1ZXZIekhaR1U  
+ 
+[debug] [2019-08-21T15:08:29.002Z] <<< HTTP RESPONSE 200
+[info] ✔  functions[app(us-central1)]: Successful update operation. 
+[debug] [2019-08-21T15:08:29.005Z] [
+  {
+    "config": {
+      "public": "build",
+      "ignore": [
+        "firebase.json",
+        "**/.*",
+        "**/node_modules/**"
+      ],
+      "rewrites": [
+        {
+          "source": "**",
+          "destination": "/index.html"
+        }
+      ],
+      "site": "strider-bug-hunters"
+    },
+    "site": "strider-bug-hunters",
+    "version": "sites/strider-bug-hunters/versions/3705977fde8b9fb1"
+  }
+]
+[info] i  hosting[strider-bug-hunters]: finalizing version...
+[debug] [2019-08-21T15:08:29.006Z] >>> HTTP REQUEST PATCH https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/3705977fde8b9fb1?updateMask=status  
+
+[debug] [2019-08-21T15:08:29.641Z] <<< HTTP RESPONSE 500
+[debug] [2019-08-21T15:08:29.641Z] <<< HTTP RESPONSE BODY
+[error] 
+[error] Error: HTTP Error: 500, Internal error encountered.
+[debug] [2019-08-21T15:08:30.018Z] Error Context: {
+  "body": {
+    "error": {
+      "code": 500,
+      "message": "Internal error encountered.",
+      "status": "INTERNAL"
+    }
+  },
+  "response": {
+    "statusCode": 500,
+    "body": {
+      "error": {
+        "code": 500,
+        "message": "Internal error encountered.",
+        "status": "INTERNAL"
+      }
+    },
+    "headers": {
+      "vary": "X-Origin, Referer, Origin,Accept-Encoding",
+      "content-type": "application/json; charset=UTF-8",
+      "date": "Wed, 21 Aug 2019 15:08:29 GMT",
+      "server": "ESF",
+      "cache-control": "private",
+      "x-xss-protection": "0",
+      "x-frame-options": "SAMEORIGIN",
+      "x-content-type-options": "nosniff",
+      "alt-svc": "quic=\":443\"; ma=2592000; v=\"46,43,39\"",
+      "accept-ranges": "none",
+      "transfer-encoding": "chunked"
+    },
+    "request": {
+      "uri": {
+        "protocol": "https:",
+        "slashes": true,
+        "auth": null,
+        "host": "firebasehosting.googleapis.com",
+        "port": 443,
+        "hostname": "firebasehosting.googleapis.com",
+        "hash": null,
+        "search": "?updateMask=status",
+        "query": "updateMask=status",
+        "pathname": "/v1beta1/sites/strider-bug-hunters/versions/3705977fde8b9fb1",
+        "path": "/v1beta1/sites/strider-bug-hunters/versions/3705977fde8b9fb1?updateMask=status",
+        "href": "https://firebasehosting.googleapis.com/v1beta1/sites/strider-bug-hunters/versions/3705977fde8b9fb1?updateMask=status"
+      },
+      "method": "PATCH"
+    }
+  }
+}

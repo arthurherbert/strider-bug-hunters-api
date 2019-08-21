@@ -1,10 +1,24 @@
 const express = require("express");
+// const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
-const db = require("../service");
+var firebase = require("firebase/app");
+var firebaseConfig = {
+  apiKey: "AIzaSyA2fFvZfjVLweMg_NZnnGcS03L_oSi04r0",
+  authDomain: "strider-bug-hunters.firebaseapp.com",
+  databaseURL: "https://strider-bug-hunters.firebaseio.com",
+  projectId: "strider-bug-hunters",
+  storageBucket: "strider-bug-hunters.appspot.com",
+  messagingSenderId: "114071764524",
+  appId: "1:114071764524:web:25cc39625ad275b1"
+};
+firebase.initializeApp(firebaseConfig);
+require("firebase/firestore");
+
+const db = firebase.firestore(firebase.app());
 
 var router = express.Router();
-
+// app.use(cors({origin:true}));
 /* GET home page. */
 router.get("/", function(req, res, next) {
   res.send("🐛 Strider Task: BUG HUNTERS");
@@ -16,14 +30,9 @@ router.get("/events", async function(req, res, next) {
   const events = [];
   for (eventRef of eventsRef.docs) {
     const event = eventRef.data();
-    const team = await event.team.get();
     events.push({
       id: eventRef.id,
-      ...event,
-      team: {
-        id: team.id,
-        ...team.data()
-      }
+      ...event
     });
   }
   res.send(events);
@@ -33,7 +42,16 @@ router.post("/events", async function(req, res, next) {
   try {
     const eventsRef = db.collection("events");
     eventsRef
-      .add({ ...req.body, team: db.doc(`teams/${req.body.team}`) })
+      .add(
+        { 
+          ...req.body,
+          team: {
+            id: req.body.team_id,
+            name: req.body.team_name
+          },
+          created_at: firebase.firestore.Timestamp.fromDate(new Date(req.body.created_at * 1000)) 
+        }
+      )
       .then(newEvent => {
         res.send(`Added event with id: ${newEvent.id}`);
       });
@@ -42,7 +60,7 @@ router.post("/events", async function(req, res, next) {
   }
 });
 
-/* GET all events. */
+/* GET all teams. */
 router.get("/teams", async function(req, res, next) {
   const teamsRef = await db.collection("teams").get();
   const teams = [];

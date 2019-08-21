@@ -1,5 +1,6 @@
 const functions = require('firebase-functions');
 const express = require("express");
+const cors = require("cors");
 const app = express();
 const bodyParser = require("body-parser");
 var firebase = require("firebase/app");
@@ -18,7 +19,7 @@ require("firebase/firestore");
 const db = firebase.firestore(firebase.app());
 
 var router = express.Router();
-
+app.use(cors({origin:true}));
 /* GET home page. */
 router.get("/", function(req, res, next) {
   res.send("🐛 Strider Task: BUG HUNTERS");
@@ -30,14 +31,9 @@ router.get("/events", async function(req, res, next) {
   const events = [];
   for (eventRef of eventsRef.docs) {
     const event = eventRef.data();
-    const team = await event.team.get();
     events.push({
       id: eventRef.id,
-      ...event,
-      team: {
-        id: team.id,
-        ...team.data()
-      }
+      ...event
     });
   }
   res.send(events);
@@ -47,7 +43,16 @@ router.post("/events", async function(req, res, next) {
   try {
     const eventsRef = db.collection("events");
     eventsRef
-      .add({ ...req.body, team: db.doc(`teams/${req.body.team}`) })
+      .add(
+        { 
+          ...req.body,
+          team: {
+            id: req.body.team_id,
+            name: req.body.team_name
+          },
+          created_at: firebase.firestore.Timestamp.fromDate(new Date(req.body.created_at * 1000)) 
+        }
+      )
       .then(newEvent => {
         res.send(`Added event with id: ${newEvent.id}`);
       });
