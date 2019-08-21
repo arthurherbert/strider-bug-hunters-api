@@ -4,10 +4,6 @@ const serverless = require("serverless-http");
 var path = require("path");
 var cookieParser = require("cookie-parser");
 
-var indexRouter = require("./routes/index");
-var teamsRouter = require("./routes/teams");
-var eventsRouter = require("./routes/events");
-
 var app = express();
 
 app.set("view engine", "html");
