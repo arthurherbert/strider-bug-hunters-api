@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "private": true,
   "scripts": {
-    "build": "netlify-lambda build express",
+    "build": "netlify-lambda build --config ./config/webpack.functions.js express",
     "start": "node ./bin/www"
   },
   "dependencies": {
@@ -11,6 +11,7 @@
     "express": "^4.16.3",
     "firebase": "^6.4.0",
     "netlify-lambda": "^0.4.0",
-    "serverless-http": "^1.6.0"
+    "serverless-http": "^1.6.0",
+    "webpack-node-externals": "^1.7.2"
   }
 }
