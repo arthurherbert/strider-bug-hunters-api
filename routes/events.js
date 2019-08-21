@@ -1,4 +1,5 @@
 var express = require("express");
+var serverless = require("serverless-http");
 var router = express.Router();
 var db = require("../service");
 
@@ -35,3 +36,4 @@ router.post("/", async function(req, res, next) {
 });
 
 module.exports = router;
+module.exports.handler = serverless(router);
