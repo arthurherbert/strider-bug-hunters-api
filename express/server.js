@@ -1,5 +1,4 @@
 const express = require("express");
-const serverless = require("serverless-http");
 const app = express();
 const bodyParser = require("body-parser");
 const db = require("../service");
@@ -66,8 +65,6 @@ router.post("/teams", async function(req, res, next) {
 });
 
 app.use(bodyParser.json());
-app.use("/", router); // path must route to lambda
-app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/", router);
 
 module.exports = app;
-module.exports.handler = serverless(app);
