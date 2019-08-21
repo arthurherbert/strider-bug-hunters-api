@@ -25,7 +25,7 @@ app.use("/teams", teamsRouter);
 app.use(function(req, res, next) {
   next(createError(404));
 });
-app.use("/.netlify/functions/server", router); // path must route to lambda
+app.use("/.netlify/functions/server", indexRouter); // path must route to lambda
 // error handler
 app.use(function(err, req, res, next) {
   // set locals, only providing error in development
